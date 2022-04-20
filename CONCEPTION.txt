@@ -1,0 +1,54 @@
+CONCEPTION : ICWars (Thoral & Mourot)
+
+Extension City :
+
+    Les City sont un nouveau type d'ICWarsActor, elles en héritent donc.
+
+    ##Elles sont créés au niveau de ICWarsArea par l'intermédiaire d'une methode d'ICWarsBehavior (celle-ci,
+        à connaissance des cellules spécifiques où elles doivent apparaitre).
+
+    ##La class Unit enregistre les Cities capturables par interaction de contact et enregistre l'aciton Capture dans sa
+        list des possibleAcitons (les Cities acceptent les interactions de contact et délèguent ceci au gestionnaire
+        d'interactions des Units). L'action CAPTURE n'est ajoutée que s'il n'en existe pas déja dans
+        la liste. Si l'unitée quitte une cellule elle supprime l'action CAPTURE de la List (dans la methode onleaving).
+
+    ##Si le Player veut capturer la city l'action CAPTURE appelle une méthode de l'unité puis la capture est effectuée
+        dans ICWarsPlayer. La faction de la City est changée et est ajoutée à une list prévue à cet effet dans l'Area.
+
+    ##A chaque début de tour (Start Turn) appel une méthode de ICWarsArea qui résout les effets des cities. S'il y a
+        de la place pour faire spawn des Units, alors il y a environ une chance sur trois pour qu'elle spawn (elle est
+        alors enregistrée comme une unité a sa creation).
+
+    ##Lorsqu'une city déjà capturée par un joueur se voit capturer par un joueur adverse, les unités créées par la city
+        qui sont toujours en vie change de faction à l'image d'un peuple qui n'aurait pas de réelles convictions si ce
+        n'est celle de vouloir survivre.
+        Cela se fait grâce à une liste d'unité présente dans la classe City qui répertorie les unités créées par cette
+        dernière. La modification de la faction des unités a lieu dans la méthode beCaptured de City qui, lorsqu'elle
+        change de propriétaire, appelle la méthode setFaction sur chaque unité de la liste en lui faisant prendre la
+        faction du joueur venant de capturer la ville.
+
+Extension Healer :
+
+    ##Le Healer est une sous-classe de Unit. Elle a un sprite personnalisée. Le Healer se comporte comme une Unit,
+        cependant elle a en plus, la possibilité de soigner les Unit de sa faction ainsi qu'elle-même.
+        Elle a donc un attribut "heal" caractérisant sa puissance de soin ainsi qu'une ActionHeal (fonctionnement
+        analogue a l'action ATTACK mais trouve et cible cette fois la troupe de sa faction la plus faible et la soigne).
+        L'Action automatique de AIPlayer utilise le heal si une de ces Units a pris des dégats sinon le Healer possède
+        toutefois une attaque de 1.
+
+
+Extension Graphique :
+
+    1) ICWarsScreen : Sous class de ICWarsArea qui permet de ne pas redéfinir toutes les méthodes abstract d'Area.
+                      Possède des sous-classes qui on pour fonction unique d'être des écrans d'affichages de fin de jeu
+                      ou de début.
+                      Le Menu, appellé dans la methode begin est réceptif aux touches V et B pour jouer en solo
+                      ou en 1 VS 1. Il permet de lancer l'une ou l'autre des deux configurations.
+                      Tout les autres écrans sont des issus différente de ICWars. (Victoire de l'AIPlayer, du joueur 1
+                      ou du joueur 2 soit à la fin de chaque niveau).
+
+
+    2) TombStone : Nouvel Actor qui a pour unique fonction de s'enregistrer dans l'aire au moment ou une unité meurt.
+                   Il indique le lieu de mort des Unit (sprite superposable si plusieurs au même endroit ce qui donne
+                   une indication quant aux nombres d'unités (toutes factions confondues) mortes au combat à un endroit
+                   précis.
