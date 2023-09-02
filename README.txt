@@ -1,122 +1,86 @@
+# ICWARS - Retro Turn-based 2D Game
 
-//ENGLISH VERSION BELOW//
+ICWARS is a turn-based 2D game inspired by classic GameBoy games. In this game, you have the option to play against an AI opponent or challenge a friend in exciting battles. With multiple levels and unique units (Soldier, Tank, Medic), ICWARS offers a captivating gaming experience enhanced even more by cities which you can capture to summon allies and strategize your way to victory.
 
-Démarrage du jeu :
+## Features
 
-    - Il suffit de lancer le programme. Suite à cela un menu s'affiche.
+- **Two Gameplay Modes**: Choose between playing against an AI opponent or challenging a friend in a two-player mode.
 
-Utilisation du menu :
+- **Variety of Units**: Command three types of units - Soldier, Tank, and Medic, each with its unique abilities and strengths.
 
-    - Appuyer sur "V" pour jouer contre une intelligence artificielle ;
-    - Appuyer sur "B" pour jouer avec un deuxième joueur à tour de rôle.
+- **City Capture**: Capture cities to summon allies randomly every turn, bolstering your forces.
 
-Contrôles :
+## Getting Started
 
-    - Touches directionelles :
+### Prerequisites
 
-        - "LEFT";
-        - "RIGHT";
-        - "UP";
-        - "DOWN".
+Make sure you have Java installed on your system. If not, you can download it from [here](https://www.oracle.com/java/technologies/javase-downloads.html).
 
-    - Touches utilitaires :
+### Starting the Game
 
-        - "R" ==> Fait revenir au Menu;
-        - "N" ==> Passe au niveau suivant s'il existe sinon affiche la fin du jeu;
-        - "TAB" ==> Passe au tour du joueur suivant;
+- Simply launch the program, and a menu will appear to guide you further.
 
-    - Appuyer sur "ENTER" sur le sprite d'une unité pour la sélectionner et la faire se deplacer si elle ne la pas encore été;
+### Using the Menu
 
-    - Après-cela :
+- Press "V" to play against an AI opponent.
+- Press "B" to engage in a two-player game, taking turns.
 
-        Les actions possibles pour chaque unité sont affichées en-haut à droite de l'écran;
+### Controls
 
-        - Si l'unité sélectionnée se trouve sur une ville :
+#### Directional Keys
 
-            - Appuyer sur "C" pour capturer la ville qui vous fournira aléatoirement des unités à chaque tour;
+- "LEFT"
+- "RIGHT"
+- "UP"
+- "DOWN"
 
-        - Si l'unité sélectionnée est un Soldat ou un Tank :
+#### Utility Keys
 
-            - Appuyer sur "A" pour démarrer l'attaque puis appuyer sur "LEFT" ou "RIGHT" pour naviguer entre les unités attaquables;
-            - Appuyer sur "TAB" pour déselectionner et annuler l'attaque;
-            - Appuyer sur "ENTER" pour exécuter l'attaque.
+- "R": Return to the main menu.
+- "N": Proceed to the next level (if available) or display the end of the game.
+- "TAB": Switch to the next player's turn.
 
-            - Appuyer sur "W" pour passer le tour de l'unité (se met en "attente").
+#### Unit Selection and Actions
 
-        - Si l'unité sélectionnée est un Healer:
+- Press "ENTER" on a unit's sprite to select it for movement.
+- The possible actions for each unit are displayed at the top right of the screen.
 
-            - Appuyer sur "A" pour démarrer l'attaque puis appuyer sur "LEFT" ou "RIGHT" pour naviguer entre les unités attaquables;
-            - Appuyer sur "TAB" pour déselectionner et annuler l'attaque;
-            - Appuyer sur "ENTER" pour exécuter l'attaque.
+##### For Units in a City
 
-            - Appuyer sur "H" pour démarrer les soins puis appuyer sur "LEFT" ou "RIGHT" pour naviguer entre les unités alliées
-              pouvant être soignées (ou lui-même);
-            - Appuyer sur "TAB" pour déselectionner et annuler le soin;
-            - Appuyer sur "ENTER" pour exécuter les soins.
+- Press "C" to capture the city, which will provide you with random units each turn.
 
-            -Appuyer sur "W" pour passer le tour de l'unité (se met en "attente").
+##### For Soldiers or Tanks
 
-    - Reséléctionner les unités pour exécuter leur actions si la touche "TAB" à été enfoncée ou
-      que les touches directionelles ont été utilisées avant de réaliser une action.
+- Press "A" to initiate an attack. Use "LEFT" or "RIGHT" to navigate between attackable units.
+- Press "TAB" to cancel the attack selection.
+- Press "ENTER" to execute the attack.
+- Press "W" to skip the unit's turn (put it in "standby" mode).
 
-//VERSION FRANÇAISE AU-DESSUS//
+##### For Healers
 
-Starting the game:
+- Press "A" to initiate an attack. Use "LEFT" or "RIGHT" to navigate between attackable units.
+- Press "TAB" to cancel the attack selection.
+- Press "ENTER" to execute the attack.
+- Press "H" to initiate healing. Use "LEFT" or "RIGHT" to navigate between units that can be healed (including the healer).
+- Press "TAB" to cancel the heal selection.
+- Press "ENTER" to execute the heal.
+- Press "W" to skip the unit's turn (put it in "standby" mode).
 
-    - Just launch the program. After that a menu will appear.
+### Enjoy the Game!
 
-Using the menu :
+ICWARS offers hours of strategic fun as you command your units, capture cities, and outmaneuver your opponent. Have a blast playing!
 
-    - Press "V" to play against an artificial intelligence;
-    - Press "B" to play with a second player in turn.
+## Contributing
 
-Controls :
+We welcome contributions to ICWARS. If you have ideas for improvements or bug fixes, please submit a pull request. For major changes, please open an issue first to discuss the proposed changes.
 
-    - Directional keys :
+## License
 
-        - "LEFT";
-        - RIGHT;
-        - UP";
-        - DOWN.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-    - Utility keys:
+## Acknowledgments
 
-        - "R" ==> Returns to the Menu;
-        - N" ==> Go to the next level if it exists otherwise displays the end of the game;
-        - TAB" ==> Goes to the next player's turn;
+- ICWARS was created with a passion for classic gaming and strategy.
+- Special thanks to the A* algorithm for powering our route computations.
 
-    - Press "ENTER" on the sprite of a unit to select it and make it move if it has not been yet;
-
-    - After that:
-
-        The possible actions for each unit are displayed at the top right of the screen;
-
-        - If the selected unit is in a city:
-
-            - Press "C" to capture the city that will randomly provide you with units each turn;
-
-        - If the selected unit is a Soldier or a Tank:
-
-            - Press "A" to start the attack and then press "LEFT" or "RIGHT" to navigate between the attackable units;
-            - Press the TAB key to deselect and cancel the attack;
-            - Press the ENTER key to execute the attack.
-
-            - Press the "W" key to skip the unit's turn (goes into "standby").
-
-        - If the selected unit is a Healer:
-
-            - Press "A" to start the attack, then press "LEFT" or "RIGHT" to navigate between the attackable units;
-            - Press the TAB key to deselect and cancel the attack;
-            - Press the ENTER key to execute the attack.
-
-            - Press "H" to start healing, then press "LEFT" or "RIGHT" to navigate between allied units
-              units that can be healed (or himself);
-            - Press "TAB" to deselect and cancel the heal;
-            - Press "ENTER" to execute the heal.
-
-            -Press "W" to skip the unit's turn (goes into "standby").
-
-    - Reselect the units to execute their actions if the "TAB" key has been pressed or
-      the directional keys have been used before performing an action.
-
-
+Happy gaming with ICWARS! 🎮🚀
