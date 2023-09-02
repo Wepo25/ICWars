@@ -1,4 +1,4 @@
-# JaVelo - Bike Travel Companion for Switzerland
+# ICWARS - Retro Turn-based 2D Game
 
 ICWARS is a turn-based 2D game inspired by classic GameBoy games. In this game, you have the option to play against an AI opponent or challenge a friend in exciting battles. With multiple levels and unique units (Soldier, Tank, Medic), ICWARS offers a captivating gaming experience enhanced even more by cities which you can capture to summon allies and strategize your way to victory.
 
