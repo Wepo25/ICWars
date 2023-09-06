@@ -83,4 +83,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - ICWARS was created with a passion for classic gaming and strategy.
 - Special thanks to the A* algorithm for powering our route computations.
 
-Happy gaming with ICWARS! 🎮🚀
+Happy gaming with ICWARS!! 🎮🚀
